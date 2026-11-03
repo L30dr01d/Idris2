@@ -21,7 +21,8 @@ jobs:
     - name: Build docs
       run: |
         sudo apt-get update
-        sudo apt-get install -y python3-sphinx
-        pip3 install -r docs/requirements.txt
+        python -m venv idris2docs_venv
+        source idris2docs_venv/bin/activate
+        pip install -r docs/requirements.txt
         cd docs
         make html
