@@ -26,18 +26,18 @@ There are two ways.
 Using pip as follows:
 
 ```sh
-python3 -m venv idris2docs_venv
+python -m venv idris2docs_venv
 source idris2docs_venv/bin/activate
 pip install --upgrade pip
-pip install sphinx_rtd_theme myst-parser sphinx sphinx-book-theme sphinxcontrib-bibtex sphinx-copybutton
+pip install -r docs/requirements.txt
 ```
 
 Using uv as follows:
 
 ```sh
-uv sync
-uv venv
-source .venv/bin/activate
+uv venv idris2docs_venv
+source idris2docs_venv/bin/activate
+uv sync --project docs --active
 ```
 
 ### LaTeX
